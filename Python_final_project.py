@@ -104,17 +104,18 @@ def add_new_date_idea():
 
     #Additional input validation to ensure only letters are supplied (Prevents dirty data)
 
-    if not activity_input.isalpha():
-        input_error_label.config(text="Only letters can be allowed in the activity field")
+    if not activity_input.replace(' ', '').isalpha() and not activity_input.isspace():
+        input_error_label.config(text="Only letters or spaces are allowed in the activity field")
         return
 
-    if not restaurant_input.isalpha():
-        input_error_label.config(text="Only letters can be allowed in the restaurant field")
+    if not restaurant_input.replace(' ', '').isalpha() and not restaurant_input.isspace():
+        input_error_label.config(text="Only letters or spaces are allowed in the restaurant field")
         return
 
-    if not special_item_input.isalpha():
-        input_error_label.config(text="Only letters can be allowed in the special item field")
+    if not special_item_input.replace(' ', '').isalpha() and not special_item_input.isspace():
+        input_error_label.config(text="Only letters or spaces are allowed in the special item field")
         return
+
 
     #Adding updated fields above to their respective arrays
     activities.append(activity_input)
