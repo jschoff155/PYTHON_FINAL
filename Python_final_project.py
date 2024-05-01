@@ -232,27 +232,27 @@ special_item_entry.bind("<KeyRelease>", update_submit_button_state)
 #REQUIREMENT 3 MET - UNIT TESTS INCLUDED
 #Running validation on inputs to ensure nothing other than letters are allowed in the inputs
 # class TestCases(unittest.TestCase):
-
+#     #Checks to ensure only spaces and letters are included in the input fields. 
 #     def test_activity_entry(self):
 #         activity_entry_value = "Hike a few miles"
-#         self.assertTrue(activity_entry_value.isalpha())
+#         self.assertTrue(activity_entry_value.replace(' ', '').isalpha())
         
-#         activity_entry_value_invalid = "Run 12 feet"
-#         self.assertFalse(activity_entry_value_invalid.isalpha())
+#         activity_entry_value_invalid = "Movies12"
+#         self.assertFalse(activity_entry_value_invalid.replace(' ', '').isalpha())
 
 #     def test_restaurant_entry(self):
 #         restaurant_entry_value = "Italian Restaurant"
-#         self.assertTrue(restaurant_entry_value.isalpha())
+#         self.assertTrue(restaurant_entry_value.replace(' ', '').isalpha())
         
-#         restaurant_entry_value_invalid = "Italian Restaurant & Cafe"
-#         self.assertFalse(restaurant_entry_value_invalid.isalpha())
+#         restaurant_entry_value_invalid = "The57"
+#         self.assertFalse(restaurant_entry_value_invalid.replace(' ', '').isalpha())
 
 #     def test_special_item_entry(self):
 #         special_item_entry_value = "Flowers"
-#         self.assertTrue(special_item_entry_value.isalpha())
+#         self.assertTrue(special_item_entry_value.replace(' ', '').isalpha())
         
 #         special_item_entry_value_invalid = "Flowers123"
-#         self.assertFalse(special_item_entry_value_invalid.isalpha())
+#         self.assertFalse(special_item_entry_value_invalid.replace(' ', '').isalpha())
 
 # if __name__ == '__main__':
 #     unittest.main()
