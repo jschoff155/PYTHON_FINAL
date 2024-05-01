@@ -47,8 +47,6 @@ Utilizing a variety of functions and tools learned in this class, program is des
 
 #IMPORTS/SETUP
 from tkinter import *
-import requests
-from bs4 import BeautifulSoup
 import unittest
 import datetime
 import random
@@ -88,7 +86,7 @@ def generate_date_night():
         #REQUIREMENT 6 MET: OUTPUT OF PROGRAM MET
         generated_date_night_label.config(text=f"Generated Date Night:\nNext night out: {cleaned_up_for_display_random_date}\nActivity: {activity.activity_name}\nRestaurant: {restaurant.restaurant_name}\nSpecial Item: {special_item.special_item_name}")
     except Exception as e:
-        generated_date_night_label.config(text=f"Unacceptbale Value: {str(e)}")
+        generated_date_night_label.config(text=f"Unacceptbale value: {str(e)}")
 
 #REQUIREMENT 5 MET - USER INPUT WITH VALIDATION
 def add_new_date_idea():
@@ -96,26 +94,23 @@ def add_new_date_idea():
     restaurant_input = restaurant_entry.get()
     special_item_input = special_item_entry.get()
     submit_button_success_label.config(text="Ideas added successfully")
+    save_button_confirmation_label.config(text="")
 
     #Input validation for input fields (Won't allow user to submit until all fields has been supplied > Ensures balance and one field doesn't get a higher rate of duplicate outputs)
     #COMPETENCY 1 MET - IF, IF/ELSE, IF-ELIF
     if not (activity_input and restaurant_input and special_item_input):
-        input_error_label.config(text="At least one field is required")
+        input_error_label.config(text="All fields are required")
 
     #Additional input validation to ensure only letters are supplied (Prevents dirty data)
 
-    if not activity_input.replace(' ', '').isalpha() and not activity_input.isspace():
+    if not activity_input.replace(' ', '').isalpha():
         input_error_label.config(text="Only letters or spaces are allowed in the activity field")
-        return
 
-    if not restaurant_input.replace(' ', '').isalpha() and not restaurant_input.isspace():
+    if not restaurant_input.replace(' ', '').isalpha():
         input_error_label.config(text="Only letters or spaces are allowed in the restaurant field")
-        return
 
-    if not special_item_input.replace(' ', '').isalpha() and not special_item_input.isspace():
+    if not special_item_input.replace(' ', '').isalpha():
         input_error_label.config(text="Only letters or spaces are allowed in the special item field")
-        return
-
 
     #Adding updated fields above to their respective arrays
     activities.append(activity_input)
@@ -128,8 +123,6 @@ def add_new_date_idea():
     activity_entry.delete(0, END)
     restaurant_entry.delete(0, END)
     special_item_entry.delete(0, END)
-
-
 
 #Validation 
 #COMPETENCY 5 MET - ARBITRARY ARGUMENTS
@@ -170,6 +163,7 @@ try:
                 file.write(option + "\n")
 except:
     pass
+
 def save_arrays():
     save_arrays_as_files("restaurants_info.txt", restaurants)
     save_arrays_as_files("activities_info.txt", activities)
