@@ -97,9 +97,9 @@ def add_new_date_idea():
     special_item_input = special_item_entry.get()
     submit_button_success_label.config(text="Ideas added successfully")
 
-    #Input validation for input fields (Won't allow user to submit until at least one field has been supplied)
+    #Input validation for input fields (Won't allow user to submit until all fields has been supplied > Ensures balance and one field doesn't get a higher rate of duplicate outputs)
     #COMPETENCY 1 MET - IF, IF/ELSE, IF-ELIF
-    if not (activity_input or restaurant_input or special_item_input):
+    if not (activity_input and restaurant_input and special_item_input):
         input_error_label.config(text="At least one field is required")
 
     #Additional input validation to ensure only letters are supplied (Prevents dirty data)
