@@ -230,6 +230,7 @@ restaurant_entry.bind("<KeyRelease>", update_submit_button_state)
 special_item_entry.bind("<KeyRelease>", update_submit_button_state)
 
 #REQUIREMENT 3 MET - UNIT TESTS INCLUDED
+#Running validation on inputs to ensure nothing other than letters are allowed in the inputs
 # class TestCases(unittest.TestCase):
 
 #     def test_activity_entry(self):
