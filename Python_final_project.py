@@ -5,7 +5,7 @@ Last date modified: 04/30/2024
 Utilizing a variety of functions and tools learned in this class, program is designed to allow a user to:
 1. Click a button and generate a random date night (Including special item, activity, resturaunt to go to, and the date for next night out)
 2. Allow a user to input data to add to the existing arrays within the project
-3. Save array information in separate files for each array
+3. Save array information in separate files for each array via file I/O
 """
 
 #DELIVERABLES REQUIRED:
